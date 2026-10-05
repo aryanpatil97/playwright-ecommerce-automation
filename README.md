@@ -66,8 +66,7 @@ playwright-ecommerce-automation/
 - **playwright.config.ts** contains Playwright execution configuration.
 - **README.md** documents the project, architecture, setup, and results.
 
-The Page Object layer separates UI interaction details from test intent. For example, the cart page encapsulates cart locators, quantity handling, product extraction, subtotal extraction, and checkout navigation rather than placing all of that logic directly inside the test. fileciteturn0file1L3-L20
-
+The Page Object layer separates UI interaction details from test intent. For example, the cart page encapsulates cart locators, quantity handling, product extraction, subtotal extraction, and checkout navigation rather than placing all of that logic directly inside the test. 
 ## Key Automation Practices Demonstrated
 
 ### Page Object Model
@@ -80,8 +79,7 @@ Dedicated page classes represent the major application areas:
 - `LoginPage`
 - `CheckoutPage`
 
-The implementation keeps locators and reusable actions inside these classes. For example, the product page encapsulates quantity handling and Add to Cart behavior. fileciteturn0file5L3-L23
-
+The implementation keeps locators and reusable actions inside these classes. For example, the product page encapsulates quantity handling and Add to Cart behavior. 
 ### Locator Engineering
 
 The project uses Playwright locators such as:
@@ -97,25 +95,28 @@ The goal is to keep selectors readable and tied to meaningful application elemen
 
 The tests do not rely only on hardcoded expected UI values.
 
-For example, the cart test extracts product prices from the application and calculates the expected subtotal from price × quantity before comparing it with the displayed subtotal. fileciteturn0file0L124-L169
+For example, the cart test extracts product prices from the application and calculates the expected subtotal from price × quantity before comparing it with the displayed subtotal. 
 
-The reusable price utility contains the parsing and subtotal calculation logic. fileciteturn0file7L1-L12
 
+The reusable price utility contains the parsing and subtotal calculation logic. 
 ### Search Validation
 
-The search test executes a Hammer search and verifies that returned product names actually contain the searched term, demonstrating filtering behavior rather than merely checking that the search field accepted text. fileciteturn0file0L41-L73
+The search test executes a Hammer search and verifies that returned product names actually contain the searched term, demonstrating filtering behavior rather than merely checking that the search field accepted text. 
 
 ### Sorting Validation
 
-The sorting scenario extracts displayed prices, creates an expected descending representation programmatically, and compares the actual UI order against it. This avoids hardcoding a particular product-price sequence. fileciteturn0file0L174-L200
+The sorting scenario extracts displayed prices, creates an expected descending representation programmatically, and compares the actual UI order against it. This avoids hardcoding a particular product-price sequence. 
+
 
 ### Negative Testing
 
-The login scenario intentionally uses invalid credentials and verifies both the error message and the fact that the application remains on the login page. fileciteturn0file4L44-L61
+The login scenario intentionally uses invalid credentials and verifies both the error message and the fact that the application remains on the login page. 
 
 ### End-to-End Checkout
 
-The checkout scenario covers a complete purchase workflow, including adding products with different quantities, navigating through guest checkout, entering customer and billing details, selecting Cash on Delivery, placing the order, and validating the generated invoice confirmation. fileciteturn0file2L107-L128 fileciteturn0file2L153-L189
+The checkout scenario covers a complete purchase workflow, including adding products with different quantities, navigating through guest checkout, entering customer and billing details, selecting Cash on Delivery, placing the order, and validating the generated invoice confirmation. 
+ 
+
 
 ## Test Results
 
@@ -129,7 +130,7 @@ The captured Playwright report shows:
 - **Chromium**
 - **Total execution time: 28.5 seconds**
 
-The seven scenarios are all represented in the execution report, including Homepage, Search, Product Details, Cart, Sorting, Negative Login, and Checkout. fileciteturn0file8L10-L21
+The seven scenarios are all represented in the execution report, including Homepage, Search, Product Details, Cart, Sorting, Negative Login, and Checkout. 
 
 A screenshot of the successful execution report is included under `reports/`.
 
@@ -147,7 +148,7 @@ A screenshot of the successful execution report is included under `reports/`.
 Clone the repository:
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone <https://github.com/aryanpatil97/playwright-ecommerce-automation>
 cd playwright-ecommerce-automation
 ```
 
@@ -237,14 +238,13 @@ This project focuses on:
 
 ## Sample Implementation
 
-The main test suite imports the Page Objects and utility modules rather than placing all interaction logic directly in the test file. fileciteturn0file0L1-L12
+The main test suite imports the Page Objects and utility modules rather than placing all interaction logic directly in the test file. 
+The cart validation demonstrates the intended separation clearly: page-level methods handle UI interaction, while the test coordinates the scenario and performs business-level assertions. 
 
-The cart validation demonstrates the intended separation clearly: page-level methods handle UI interaction, while the test coordinates the scenario and performs business-level assertions. fileciteturn0file0L107-L169
 
 ## Test Data
 
-Test data is separated from the test implementation. The repository currently defines checkout data, intentionally invalid login credentials, and checkout product names in a dedicated data module. fileciteturn0file6L1-L17
-
+Test data is separated from the test implementation. The repository currently defines checkout data, intentionally invalid login credentials, and checkout product names in a dedicated data module. 
 For a public portfolio repository, replace any personal or realistic-looking contact information with clearly fictional test data before publishing.
 
 ## Future Improvements
@@ -275,4 +275,4 @@ B.E. Information Technology
 
 Playwright | TypeScript | E2E Automation | Software Testing | Page Object Model
 
-[GitHub](https://github.com/) · [LinkedIn](https://www.linkedin.com/)
+[GitHub](https://github.com/aryanpatil97) · [LinkedIn](https://www.linkedin.com/in/aryanpatil97/)
